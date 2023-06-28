@@ -29,9 +29,12 @@
         <img class="w-6 h-6" src="/WhatsApp_logo.svg" alt="Whatsapp logo">
       </div>
     </div>
-    <section class="px-4 md:px-20 my-20">
-      <h3 class="text-xl font-semibold">Conoce nuestros Programas de Especialización</h3>
+    <section class="w-full px-[10px] pb-[137px] min-[1366px]:w-[66%] min-[1366px]:px-[86px] min-[1366px]:pb-[160px]">
+      <h3 class="text-[#000425] text-base font-bold mb-[30px] min-[1366px]:text-xl min-[1366px]:text-[#222222]">
+        Conoce nuestros Programas de Especialización
+      </h3>
       <!-- Componente Card 1 -->
+      <CursosList></CursosList>
     </section>
     <section class="bg-gradient-to-b from-[#3015FD] to-[#5640FF] h-[30rem] md:h-72 px-4 md:px-56 relative flex flex-col justify-end py-4 md:justify-center gap-4 text-white">
       <img class="absolute h-96 lg:h-auto -top-28 left-11 lg:-top-24 lg:-left-28" src="../assets/Chinita_pacha.webp" alt="Chinita Pacha">
@@ -56,10 +59,12 @@
 <script>
   import ArrowIcon from '@/components/Icons/ArrowIcon.vue'
   import PencilIcon from '@/components/Icons/PencilIcon.vue'
+  import CursosList from '@/components/CursosList.vue'
   export default{
     components: {
       ArrowIcon,
-      PencilIcon
+      PencilIcon,
+      CursosList
     }
   }
 </script>
