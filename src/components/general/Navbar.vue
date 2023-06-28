@@ -1,14 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <nav class=" flex flex-row h-[60px] justify-around items-center bg-[#3B00FF] text-white">
+  <nav class=" flex flex-row h-[60px] justify-between px-2 lg:px-20 items-center bg-[#3B00FF] text-white">
     <RouterLink to="/">
       <img class="h-[34px]" src="/Logo.svg" alt="Logo">
     </RouterLink>
     <div class="flex flex-row gap-4">
       <!-- <RouterLink to="/">Home</RouterLink> -->
       <!-- <RouterLink to="/about">About</RouterLink> -->
-      <CartIcon />
+      <CartIcon class="hidden md:block" />
       <MenuIcon />
     </div>
   </nav>
@@ -21,6 +20,11 @@ export default {
   components: {
     CartIcon,
     MenuIcon
+  },
+  data(){
+    return {
+
+    }
   }
 }
 </script>
