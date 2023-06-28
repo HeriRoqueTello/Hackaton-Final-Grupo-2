@@ -18,19 +18,19 @@ export default {
     return {
       beneficios: [
         {
-          icon: './src/components/Icons/people.png',
+          icon: '/public/icons/people.png',
           title: 'Aprende de Expertos',
           description: 'Aprende directamente de expertos del mercado a través del análisis y solución de problemas de programación. Utilizando los frameworks y herramientas de mayor relevancia dentro del mundo del coding.',
           id: 1
         },
         {
-          icon: './src/components/Icons/monitor.png',
+          icon: '/public/icons/monitor.png',
           title: 'Clases Virtuales',
           description: 'Aprovecha tu tiempo al máximo en nuestras clases virtuales y participa presencialmente de nuestras hackathones semanales para conocer y participar de la comunidad profesional que liderará la transformación tecnológica del Perú.',
           id: 2
         },
         {
-          icon: './src/components/Icons/briefcase.png',
+          icon: '/public/icons/briefcase.png',
           title: 'Empleabilidad',
           description: 'Al finalizar el programa y certificarte a nombre de IDAT, podrás acceder a ofertas laborales especialmente identificadas para la comunidad PachaQTec, a través de nuestra plataforma de empleabilidad IDAT JOB.',
           id: 3
