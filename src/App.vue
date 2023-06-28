@@ -1,14 +1,19 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+import Navbar from './components/general/Navbar.vue';
+
+export default {
+  components: {
+    Navbar
+  }
+}
+
 </script>
 
 <template>
   <header>
     <div>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <Navbar />
     </div>
   </header>
 
