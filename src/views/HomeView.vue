@@ -43,8 +43,9 @@
       <p class="text-sm md:w-2/4">Al finalizar sabrás cómo crear una página web y desarrollar la lógica detrás del funcionamiento de una aplicación, así como formar parte de una gran comunidad de desarrolladores</p>
     </section>
     <section class="px-4 md:px-20 my-20">
-      <h4 class="text-lg font-semibold">Beneficios</h4>
+      <h4 class="text-base text-[#000425] font-bold mb-[30px]">Beneficios</h4>
       <!-- Componente 2 -->
+      <BeneficiosList></BeneficiosList>
     </section>
     <footer class="bg-[#000425] text-white px-4 md:px-20 py-4">
       <span class="text-sm font-semibold">Con el respaldo de:</span>
@@ -60,11 +61,13 @@
   import ArrowIcon from '@/components/Icons/ArrowIcon.vue'
   import PencilIcon from '@/components/Icons/PencilIcon.vue'
   import CursosList from '@/components/CursosList.vue'
+  import BeneficiosList from '@/components/BeneficiosList.vue'
   export default{
     components: {
       ArrowIcon,
       PencilIcon,
-      CursosList
+      CursosList,
+      BeneficiosList
     }
   }
 </script>
