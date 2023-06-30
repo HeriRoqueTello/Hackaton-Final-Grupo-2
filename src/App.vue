@@ -4,7 +4,7 @@ import Navbar from './components/general/Navbar.vue';
 
 export default {
   components: {
-    Navbar,
+    Navbar
   }
 }
 
@@ -16,6 +16,7 @@ export default {
       <Navbar />
     </div>
   </header>
+  
   <RouterView />
 </template>
 
