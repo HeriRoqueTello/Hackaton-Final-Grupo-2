@@ -5,6 +5,7 @@
         <h2 class="text-4xl lg:text-[3.375rem] font-bold leading-tight mb-8">¡Explota todo tu potencial tecnológico!</h2>
         <p class="text-xl">Con nuestros programas de especialización</p>
       </div>
+      <MobileForm v-if="false" />
     </section>
     <div class="fixed md:hidden bottom-4 right-4 flex flex-col items-end gap-4 z-50">
       <div class="w-auto bg-green-400 p-3 rounded-full cursor-pointer">
@@ -47,6 +48,7 @@
       <!-- Componente 2 -->
       <BeneficiosList></BeneficiosList>
     </section>
+    <FormHome v-if="false" class="md:hidden" />
     <footer class="bg-[#000425] text-white px-4 md:px-20 py-4">
       <span class="text-sm font-semibold">Con el respaldo de:</span>
       <div class="flex flex-row gap-4 mt-4">
@@ -60,14 +62,18 @@
 <script>
   import ArrowIcon from '@/components/Icons/ArrowIcon.vue'
   import PencilIcon from '@/components/Icons/PencilIcon.vue'
-  import CursosList from '@/components/CursosList.vue'
-  import BeneficiosList from '@/components/BeneficiosList.vue'
+  import CursosList from '@/components/home/CursosList.vue'
+  import BeneficiosList from '@/components/home/BeneficiosList.vue'
+  import FormHome from '@/components/home/FormHome.vue'
+  import MobileForm from '@/components/home/MobileForm.vue'
   export default{
     components: {
       ArrowIcon,
       PencilIcon,
       CursosList,
-      BeneficiosList
+      BeneficiosList,
+      MobileForm,
+      FormHome
     }
   }
 </script>
