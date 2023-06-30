@@ -5,6 +5,7 @@
         <h2 class="text-4xl lg:text-[3.375rem] font-bold leading-tight mb-8">¡Explota todo tu potencial tecnológico!</h2>
         <p class="text-xl">Con nuestros programas de especialización</p>
       </div>
+      <MobileForm v-if="false" />
     </section>
     <div class="fixed md:hidden bottom-4 right-4 flex flex-col items-end gap-4 z-50">
       <div class="w-auto bg-green-400 p-3 rounded-full cursor-pointer">
@@ -29,9 +30,12 @@
         <img class="w-6 h-6" src="/WhatsApp_logo.svg" alt="Whatsapp logo">
       </div>
     </div>
-    <section class="px-4 md:px-20 my-20">
-      <h3 class="text-xl font-semibold">Conoce nuestros Programas de Especialización</h3>
+    <section class="w-full px-[10px] pb-[137px] min-[1366px]:w-[66%] min-[1366px]:px-[86px] min-[1366px]:pb-[160px]">
+      <h3 class="text-[#000425] text-base font-bold mb-[30px] min-[1366px]:text-xl min-[1366px]:text-[#222222]">
+        Conoce nuestros Programas de Especialización
+      </h3>
       <!-- Componente Card 1 -->
+      <CursosList></CursosList>
     </section>
     <section class="bg-gradient-to-b from-[#3015FD] to-[#5640FF] h-[30rem] md:h-72 px-4 md:px-56 relative flex flex-col justify-end py-4 md:justify-center gap-4 text-white">
       <img class="absolute h-96 lg:h-auto -top-28 left-11 lg:-top-24 lg:-left-28" src="../assets/Chinita_pacha.webp" alt="Chinita Pacha">
@@ -40,9 +44,11 @@
       <p class="text-sm md:w-2/4">Al finalizar sabrás cómo crear una página web y desarrollar la lógica detrás del funcionamiento de una aplicación, así como formar parte de una gran comunidad de desarrolladores</p>
     </section>
     <section class="px-4 md:px-20 my-20">
-      <h4 class="text-lg font-semibold">Beneficios</h4>
+      <h4 class="text-base text-[#000425] font-bold mb-[30px]">Beneficios</h4>
       <!-- Componente 2 -->
+      <BeneficiosList></BeneficiosList>
     </section>
+    <FormHome v-if="false" class="md:hidden" />
     <footer class="bg-[#000425] text-white px-4 md:px-20 py-4">
       <span class="text-sm font-semibold">Con el respaldo de:</span>
       <div class="flex flex-row gap-4 mt-4">
@@ -56,10 +62,18 @@
 <script>
   import ArrowIcon from '@/components/Icons/ArrowIcon.vue'
   import PencilIcon from '@/components/Icons/PencilIcon.vue'
+  import CursosList from '@/components/home/CursosList.vue'
+  import BeneficiosList from '@/components/home/BeneficiosList.vue'
+  import FormHome from '@/components/home/FormHome.vue'
+  import MobileForm from '@/components/home/MobileForm.vue'
   export default{
     components: {
       ArrowIcon,
-      PencilIcon
+      PencilIcon,
+      CursosList,
+      BeneficiosList,
+      MobileForm,
+      FormHome
     }
   }
 </script>
