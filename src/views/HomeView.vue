@@ -1,4 +1,9 @@
 <template>
+  <header>
+    <div>
+      <Navbar />
+    </div>
+  </header>
   <main class="">
     <section class="relative bg-[#3015FD] text-white px-4 md:px-20 pb-20 pt-44">
       <div class="lg:w-[44.5625rem]">
@@ -60,14 +65,17 @@
   </main>
 </template>
 <script>
+  import Navbar from '@/components/general/Navbar.vue';
   import ArrowIcon from '@/components/Icons/ArrowIcon.vue'
   import PencilIcon from '@/components/Icons/PencilIcon.vue'
   import CursosList from '@/components/home/CursosList.vue'
   import BeneficiosList from '@/components/home/BeneficiosList.vue'
   import FormHome from '@/components/home/FormHome.vue'
   import MobileForm from '@/components/home/MobileForm.vue'
+
   export default{
     components: {
+      Navbar,
       ArrowIcon,
       PencilIcon,
       CursosList,
