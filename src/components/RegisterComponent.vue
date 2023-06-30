@@ -1,11 +1,13 @@
 <template>
   <section
-    class="relative w-full min-h-[100vh] px-[20px] flex flex-col justify-between min-[1366px]:w-[40%] min-[1366px]:justify-start">
+    class="relative h-screen px-[20px] flex flex-col lg:justify-between min-[1366px]:justify-start">
     <div class="w-full flex justify-around pt-[20px] border-b-[1px] border-solid border-[#f8f8fa]">
       <button class="w-[50%] flex justify-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.16)]">
-        <h4 class="text-[#000425] text-sm font-bold min-[1366px]:text-[#222222]">
-          Iniciar Sesión
-        </h4>
+        <RouterLink to="/login">
+          <h4 class="text-[#000425] text-sm font-bold min-[1366px]:text-[#222222]">
+            Iniciar Sesión
+          </h4>
+        </RouterLink>
       </button>
       <button
         class="w-[50%] flex justify-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.16)] border-b-[5px] border-solid border-[#000425] min-[1366px]:border-[#222222]">
