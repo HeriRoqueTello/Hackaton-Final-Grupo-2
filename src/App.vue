@@ -20,7 +20,6 @@ export default {
       <Navbar />
     </div>
   </header>
-  <MobileForm />
   <RouterView />
 </template>
 
