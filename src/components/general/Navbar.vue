@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <nav class=" flex flex-row h-[60px] justify-between px-2 lg:px-20 items-center bg-[#3B00FF] text-white">
+  <nav :class="`${color} flex flex-row h-[60px] justify-between px-2 lg:px-20 items-center text-white`">
     <RouterLink to="/">
       <img class="h-[34px]" src="/Logo.svg" alt="Logo">
     </RouterLink>
@@ -17,6 +17,12 @@ import CartIcon from '../Icons/CartIcon.vue';
 import MenuIcon from '../Icons/MenuIcon.vue';
 
 export default {
+  props: {
+    color: {
+      type: String,
+      default: 'bg-primary'
+    }
+  },
   components: {
     CartIcon,
     MenuIcon
