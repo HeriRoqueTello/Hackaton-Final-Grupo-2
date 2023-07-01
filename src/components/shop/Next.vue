@@ -1,5 +1,5 @@
 <template>
-    <div class="container-next py-12 px-10 shadow-xl mx-auto right-aligned mr-28">
+    <div class="container-next py-12 px-10 shadow-xl mx-auto mr-28">
         <div class="grid grid-cols-6 gap-4">
             <h2 class="text-[#5640FF] col-start-1 col-end-3 text-left subtotal m">Subtotal</h2>
             <label for="" class="col-end-7 col-span-2 text-right subtotal">S/ 600.00</label>
@@ -61,14 +61,6 @@ export default {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     width: 80%;
-}
-
-.right-aligned {
-  /* Ajustar el posicionamiento a la derecha */
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 </style>

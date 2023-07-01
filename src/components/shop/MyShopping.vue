@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full lg:w-[60%]">
+  <section class="w-full">
     <div class="bg-[#000425] flex py-[15px] px-[20px] gap-[20px] flex-wrap lg:bg-[#F8F8FA]">
       <img src="/icons/arrow-left-light.svg" alt="Arrow Left Icon" class="cursor-pointer w-[16px] lg:hidden">
       <img src="/icons/arrow-left-dark.svg" alt="Arrow Left Icon" class="cursor-pointer w-[20px] hidden lg:block">

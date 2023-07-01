@@ -1,5 +1,5 @@
 <template>
-    <div class="container-c py-12 px-12 shadow-xl grid grid-rows-3 grid-column-3 mx-auto right-aligned mr-32">
+    <div class="container-c py-12 px-12 shadow-xl grid grid-rows-3 grid-column-3 mx-auto mr-32">
         <div class="content-center col-start-3 w-80">
             <h2 class="text-[#5640FF] title text-left ">¡Compra exitosa!</h2>
             <p class="paragraph my-3">La boleta o factura solicitada será enviada a tu correo en unos momentos.</p> 
@@ -48,14 +48,6 @@ export default {
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     text-align: left;
-}
-
-.right-aligned {
-  /* Ajustar el posicionamiento a la derecha */
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 </style>
