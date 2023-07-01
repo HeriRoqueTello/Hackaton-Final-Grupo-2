@@ -5,10 +5,10 @@
       <img class="h-[34px]" src="/Logo.svg" alt="Logo">
     </RouterLink>
     <div class="flex flex-row gap-4">
-      <!-- <RouterLink to="/">Home</RouterLink> -->
-      <!-- <RouterLink to="/about">About</RouterLink> -->
-      <CartIcon class="hidden md:block" />
-      <MenuIcon />
+      <RouterLink to="/checkout">
+        <CartIcon class="hidden md:block cursor-pointer" />
+      </RouterLink>
+      <MenuIcon class="cursor-pointer" />
     </div>
   </nav>
 </template>
