@@ -1,10 +1,10 @@
 <template>
   <header>
     <div>
-      <Navbar :color="'bg-secondary'" />
+      <Navbar :color="'bg-secondary'" class="hidden md:flex" />
     </div>
   </header>
-  <div class="px-10 py-5 md:px-20 md:py-10">
+  <div class="md:px-20 md:py-10">
     <ShoppingList class="" />
   </div>
 </template>
