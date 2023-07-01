@@ -13,3 +13,13 @@
   }
 }
 </style>
+
+<script>
+import FormLogin from '@/components/general/FormLogin.vue'
+  export default{
+    components: {
+      FormLogin
+    }
+}
+
+</script>
