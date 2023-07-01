@@ -6,7 +6,7 @@
 </template>
 <script>
 import AsideDesktop from '@/components/general/AsideDesktop.vue';
-import RegisterComponent from '@/components/RegisterComponent.vue';
+import RegisterComponent from '@/components/general/RegisterComponent.vue';
 
 export default {
   components: {
