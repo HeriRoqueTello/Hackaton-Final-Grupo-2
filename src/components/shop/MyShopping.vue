@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="hidden min-[550px]:block min-[550px]:flex min-[550px]:justify-end">
+        <div class="hidden min-[550px]:flex min-[550px]:justify-end">
           <span class="text-[#222222] font-bold text-base">
             {{ formatPrice(course.price) }}
           </span>
