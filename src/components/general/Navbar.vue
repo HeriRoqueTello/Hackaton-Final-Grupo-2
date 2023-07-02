@@ -4,11 +4,18 @@
     <RouterLink to="/">
       <img class="h-[34px]" src="/Logo.svg" alt="Logo">
     </RouterLink>
-    <div class="flex flex-row gap-4">
+    <div class="flex flex-row gap-4 relative">
+      <RouterLink class="select-none hidden md:block" to="/cursos">Cursos</RouterLink>
       <RouterLink to="/checkout">
         <CartIcon class="hidden md:block cursor-pointer" />
       </RouterLink>
-      <MenuIcon class="cursor-pointer" />
+      <MenuIcon @click="onMenu" v-model="menu" class="cursor-pointer" />
+      <div :class="`${menu ? 'block' : 'hidden'} bg-secondary absolute top-[2.625rem] p-4 right-0 z-50 rounded-b-lg`">
+        <ul class="space-y-2">
+          <li class="cursor-pointer"><RouterLink to="/register">Register</RouterLink></li>
+          <li class="cursor-pointer"><RouterLink to="/login">Login</RouterLink></li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
@@ -29,7 +36,12 @@ export default {
   },
   data(){
     return {
-
+      menu: false
+    }
+  },
+  methods: {
+    onMenu() {
+      this.menu ? this.menu = false : this.menu = true
     }
   }
 }

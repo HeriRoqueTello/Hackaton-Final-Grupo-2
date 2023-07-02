@@ -18,7 +18,7 @@
       </div>
       <div class="flex flex-row items-center px-4 py-3 bg-[#FF1558] text-white rounded-3xl">
         <PencilIcon class="h-5" />
-        <p class="font-semibold">Inscríbete</p>
+        <a href="#FormInscribete" class="font-semibold">Inscríbete</a>
       </div>
     </div>
     <div class="flex flex-row justify-between items-center w-full py-16 px-4 md:px-20">
@@ -53,7 +53,7 @@
       <!-- Componente 2 -->
       <BeneficiosList></BeneficiosList>
     </section>
-    <FormHome class="lg:px-40 xl:hidden" />
+    <FormHome id="FormInscribete" class="lg:px-40 xl:hidden" />
     <footer class="bg-[#000425] text-white px-4 md:px-20 py-4">
       <span class="text-sm font-semibold">Con el respaldo de:</span>
       <div class="flex flex-row gap-4 mt-4">
