@@ -1,13 +1,13 @@
 <template>
   <section class="w-full">
-    <div class="bg-[#000425] flex py-[15px] px-[20px] gap-[20px] flex-wrap lg:bg-[#F8F8FA]">
-      <RouterLink to="/" >
-        <img src="/icons/arrow-left-dark.svg" alt="Arrow Left Icon" class="cursor-pointer w-[20px] hidden lg:block">
+    <div class="bg-[#000425] flex py-[15px] px-[20px] gap-[20px] flex-wrap lg:bg-[#FFFFFF]">
+      <RouterLink to="/" class="lg:hidden flex justify-center items-center">
+        <img src="/icons/arrow-left-light.svg" alt="Arrow Left Icon" class="cursor-pointer w-[16px]">
       </RouterLink>
-      <RouterLink to="/" >
-        <img src="/icons/arrow-left-light.svg" alt="Arrow Left Icon" class="cursor-pointer w-[16px] lg:hidden">
+      <RouterLink to="/" class="hidden justify-center items-center lg:flex">
+        <img src="/icons/arrow-left-dark.svg" alt="Arrow Left Icon" class="cursor-pointer w-[20px]">
       </RouterLink>
-      
+
       <h4 class="text-[#FFFFFF] text-sm font-bold lg:text-xl lg:text-[#222222]">
         Resumen de compra
       </h4>
@@ -48,7 +48,8 @@
       </li>
     </ul>
 
-    <div class="flex justify-between px-[20px] flex-wrap gap-x-[20px] py-[30px] border-solid border-t-[1px] border-[#C4C4C4]">
+    <div
+      class="flex justify-between px-[20px] flex-wrap gap-x-[20px] py-[30px] border-solid border-t-[1px] border-[#C4C4C4]">
       <span class="text-[#5640FF] text-xl font-bold">
         Precio final
       </span>

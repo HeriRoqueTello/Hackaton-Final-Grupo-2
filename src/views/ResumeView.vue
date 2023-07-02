@@ -1,10 +1,10 @@
 <template>
   <header>
     <div>
-      <Navbar :color="'bg-secondary'" class="hidden md:flex" />
+      <Navbar :color="'bg-secondary'" class="hidden lg:flex" />
     </div>
   </header>
-  <div class="md:px-20 md:py-10 md:grid md:grid-cols-3 md:gap-x-6">
+  <div class="pb-20 lg:px-20 lg:py-10 lg:grid lg:grid-cols-3 lg:gap-x-6">
     <MyShopping class="col-span-2" />
     <Confirmation class="" />
   </div>
