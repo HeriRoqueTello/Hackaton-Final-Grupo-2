@@ -10,7 +10,7 @@
         <h2 class="text-4xl lg:text-[3.375rem] font-bold leading-tight mb-8">¡Explota todo tu potencial tecnológico!</h2>
         <p class="text-xl">Con nuestros programas de especialización</p>
       </div>
-      <MobileForm v-if="false" />
+      <MobileForm class="hidden xl:block" />
     </section>
     <div class="fixed md:hidden bottom-4 right-4 flex flex-col items-end gap-4 z-50">
       <div class="w-auto bg-green-400 p-3 rounded-full cursor-pointer">
@@ -42,18 +42,18 @@
       <!-- Componente Card 1 -->
       <CursosList></CursosList>
     </section>
-    <section class="bg-gradient-to-b from-[#3015FD] to-[#5640FF] h-[30rem] md:h-72 px-4 md:px-56 relative flex flex-col justify-end py-4 md:justify-center gap-4 text-white">
-      <img class="absolute h-96 lg:h-auto -top-28 left-11 lg:-top-24 lg:-left-28" src="../assets/Chinita_pacha.webp" alt="Chinita Pacha">
+    <section class="bg-gradient-to-b from-[#3015FD] to-[#5640FF] h-[30rem] md:h-72 px-4 lg:px-56 relative flex flex-col justify-end py-4 md:justify-center gap-4 text-white">
+      <img class="w-80 self-center md:hidden lg:block lg:absolute h-96 lg:h-auto lg:-top-24 lg:-left-28" src="../assets/Chinita_pacha.webp" alt="Chinita Pacha">
       <h4 class="text-lg font-bold">Sé parte de la comunidad</h4>
-      <p class="text-sm md:w-2/4">Programas semi-presenciales para el desarrollo de habilidades de programación a lo largo de todo el Stack tecnológico.</p>
-      <p class="text-sm md:w-2/4">Al finalizar sabrás cómo crear una página web y desarrollar la lógica detrás del funcionamiento de una aplicación, así como formar parte de una gran comunidad de desarrolladores</p>
+      <p class="text-sm md:w-full lg:w-2/4">Programas semi-presenciales para el desarrollo de habilidades de programación a lo largo de todo el Stack tecnológico.</p>
+      <p class="text-sm md:w-full lg:w-2/4">Al finalizar sabrás cómo crear una página web y desarrollar la lógica detrás del funcionamiento de una aplicación, así como formar parte de una gran comunidad de desarrolladores</p>
     </section>
     <section class="px-4 md:px-20 my-20">
       <h4 class="text-base text-[#000425] font-bold mb-[30px]">Beneficios</h4>
       <!-- Componente 2 -->
       <BeneficiosList></BeneficiosList>
     </section>
-    <FormHome v-if="false" class="md:hidden" />
+    <FormHome class="lg:px-40 xl:hidden" />
     <footer class="bg-[#000425] text-white px-4 md:px-20 py-4">
       <span class="text-sm font-semibold">Con el respaldo de:</span>
       <div class="flex flex-row gap-4 mt-4">
