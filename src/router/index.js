@@ -28,8 +28,8 @@ const router = createRouter({
       component: () => import('../views/CheckoutView.vue')
     },
     {
-      path: '/resume-shop',
-      name: 'resume-shop',
+      path: '/resumen',
+      name: 'resumen',
       component: () => import('../views/ResumeView.vue')
     },
     {
