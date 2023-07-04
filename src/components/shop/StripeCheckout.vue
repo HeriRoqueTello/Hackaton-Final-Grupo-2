@@ -15,7 +15,7 @@
 
 <script>
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
-const url = 'https://hackaton-final-grupo-2-dev.netlify.app';
+const url = 'http://localhost:5173';
 export default {
   components: {
     StripeCheckout,

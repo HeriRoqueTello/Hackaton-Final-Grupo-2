@@ -1,12 +1,12 @@
 <template>
   <section class="w-full">
     <div class="bg-[#000425] flex py-[15px] px-[20px] gap-[20px] flex-wrap lg:bg-[#FFFFFF]">
-      <RouterLink to="/" class="lg:hidden flex justify-center items-center">
+      <a href="/" class="lg:hidden flex justify-center items-center">
         <img src="/icons/arrow-left-light.svg" alt="Arrow Left Icon" class="cursor-pointer w-[16px]">
-      </RouterLink>
-      <RouterLink to="/" class="hidden justify-center items-center lg:flex">
+      </a>
+      <a href="/" class="hidden justify-center items-center lg:flex">
         <img src="/icons/arrow-left-dark.svg" alt="Arrow Left Icon" class="cursor-pointer w-[20px]">
-      </RouterLink>
+      </a>
       
       <h4 class="text-[#FFFFFF] text-sm font-bold lg:text-xl lg:text-[#222222]">
         Carrito de compras
