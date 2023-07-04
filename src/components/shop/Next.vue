@@ -11,15 +11,17 @@
                 <SendIconVue />
             </button>
         </div>
-        <button class="bg-[#5640ff] rounded-xl text-white text-center next py-4 mt-9">Continuar</button>
+        <StripeCheckout  class="bg-[#5640ff] rounded-xl text-white text-center next py-4 mt-9" />
     </div>
 </template>
 <script>
 import SendIconVue from '../Icons/SendIcon.vue';
+import StripeCheckout from './StripeCheckout.vue';
 
 export default {
     components: {
-        SendIconVue
+        SendIconVue,
+        StripeCheckout
     },
 
     data() {

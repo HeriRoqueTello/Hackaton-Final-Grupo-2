@@ -42,6 +42,16 @@ const router = createRouter({
       name: 'terminos',
       component: () => import('../views/TerminosView.vue')
     },
+    {
+      path: '/pago/aceptado',
+      name: 'pago-aceptado',
+      component: () => import('../views/SuccessView.vue')
+    },
+    {
+      path: '/pago/cancelado',
+      name: 'pago-cancelado',
+      component: () => import('../views/CancelView.vue')
+    },
   ]
 })
 

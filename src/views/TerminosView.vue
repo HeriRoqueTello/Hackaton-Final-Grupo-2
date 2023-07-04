@@ -4,7 +4,7 @@
       <Navbar :color="'bg-secondary'" class="hidden md:flex" />
     </div>
   </header>
-  <body>
+  <main>
     <h1>Términos y Condiciones - Página de Cursos</h1>
     <p>Bienvenido(a) a nuestra plataforma de cursos en línea. Antes de utilizar nuestros servicios, te pedimos que leas detenidamente los siguientes Términos y Condiciones. Al acceder y utilizar nuestra página de cursos, aceptas cumplir con estos términos. Si no estás de acuerdo con alguno de ellos, te recomendamos que no utilices nuestros servicios.</p>
     
@@ -40,7 +40,7 @@
     <p>Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Te recomendamos revisar periódicamente esta sección para estar al tanto de las actualizaciones. El uso continuado de nuestros servicios después de cualquier modificación constituirá tu aceptación de los nuevos términos.</p>
 
     <p>Estos son los Términos y Condiciones que rigen el uso de nuestra página de cursos en línea. Si tienes alguna pregunta o inquietud, no dudes en contactarnos. ¡Te deseamos una excelente experiencia de aprendizaje en nuestra plataforma!</p>
-  </body>
+  </main>
 </template>
 <script>
 import Navbar from '@/components/general/Navbar.vue';
