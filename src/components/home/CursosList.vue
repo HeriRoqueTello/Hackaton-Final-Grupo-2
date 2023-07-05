@@ -4,12 +4,12 @@
     <li v-for="curso in cursos" :key="curso.id"
       class="relative w-full max-w-[355px] h-[222px] rounded-[10px] bg-center bg-no-repeat bg-cover flex flex-col justify-end p-[20px] gap-y-[15px] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-[10px] min-[1366px]:max-w-[344px] min-[1366px]:h-[320px]" :class="curso.image ? 'before:bg-gradient-to-b from-[#00042500] to-[#000425]' : 'bg-[#000425]'"
       :style="`background-image: url(${curso.image});`">
-      <h3 class="text-[#fff] text-xl font-medium z-0">{{ curso.titulo }}</h3>
+      <h3 class="text-[#fff] text-xl font-medium z-0 Poppins">{{ curso.titulo }}</h3>
       <RouterLink to="/" v-if="curso.activo"
-        class="flex gap-x-[12px] items-center text-[#fff] text-sm font-bold self-end z-0">
+        class="flex gap-x-[12px] items-center text-[#fff] text-sm font-bold self-end z-0 Poppins">
         <img src="/icons/plus-circle.png" alt="More Icon"> Ver más
       </RouterLink>
-      <span v-else class="text-[#8b9099] text-sm font-bold self-end z-0">
+      <span v-else class="text-[#8b9099] text-sm font-bold self-end z-0 Poppins">
         Proximamente
       </span>
     </li>
