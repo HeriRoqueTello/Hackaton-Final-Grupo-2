@@ -34,7 +34,7 @@ export default {
           quantity: 1,
         },
       ],
-      successURL: `${url}/pago/aceptado`,
+      successURL: `${url}/resumen`,
       cancelURL: `${url}/pago/cancelado`,
     };
   },
