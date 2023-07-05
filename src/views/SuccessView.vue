@@ -4,7 +4,7 @@
       <Navbar :color="'bg-secondary'" class="hidden md:flex" />
     </div>
   </header>
-  <section class="w-full absolute top-0 min-h-[100vh] flex flex-col justify-center px-[20px]">
+  <section class="w-full absolute bottom-0 flex flex-col justify-center px-[20px] lg:px-[80px]">
     <h5 class="text-4xl font-bold text-[#222] mb-[15px]">
       ¡Pago Exitoso!
     </h5>
@@ -31,3 +31,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+section {
+  min-height: calc(100vh - 3.75rem);
+}
+</style>
