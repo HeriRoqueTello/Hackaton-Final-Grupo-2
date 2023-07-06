@@ -35,14 +35,14 @@
         <div
           class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px] mb-[20px]">
           <input type="email" name="email" id="email" class="w-full text-xs font-bold text-[#222222] outline-0"
-            autocomplete="off" required>
+            autocomplete="off" v-model="username" required>
           <label for="email">Correo electrónico</label>
         </div>
         <div v-if="showPassword01"
-          class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px] mb-[20px] flex justify-between items-center">
-          <input type="text" name="password01" id="password01" class="w-full text-xs font-bold text-[#222222] outline-0"
-            autocomplete="off" required v-model="valuePassword01">
-          <label for="password01">Contraseña</label>
+        :class="{ 'border-[#F22A40]': errors.password01 }">
+          <Field :type="typePassword01" name="password01" id="password01"
+            class="w-full text-xs font-bold text-[#222222] outline-0" autocomplete="off" required v-model="password" />
+          <label for="password01" class="Roboto">Contraseña</label>
           <img class="w-[16px] h-[11px] cursor-pointer" src="/icons/show-icon.png" alt="Show Password Icon"
             @click="showPassword01 = false">
         </div>
@@ -64,15 +64,32 @@
 </template>
 
 <script>
+import { useLoginStore } from '@/stores/login.store.js';
+
 export default {
   data() {
     return {
-      showPassword01: false,
-      showPassword02: false,
-      valuePassword01: '',
-      valuePassword02: ''
-    };
-  }
+      username: '',
+      password: '',
+    };  
+  },
+
+  methods: {
+    async login() {
+      try {
+        
+        const authStore = useLoginStore();
+
+        await authStore.login(this.username, this.password);
+        this.$router.push('/home');
+
+      } catch (error) {
+        console.error(error);
+        console.log('Error al iniciar sesión')
+      }
+    },
+  },
+
 };
 </script>
 
