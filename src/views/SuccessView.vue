@@ -4,7 +4,7 @@
       <Navbar :color="'bg-secondary'" class="hidden md:flex" />
     </div>
   </header>
-  <section class="w-full absolute bottom-0 flex flex-col justify-center px-[20px] lg:px-[80px]">
+  <section class="w-full flex flex-col justify-center py-[20px] px-[20px] lg:px-[80px]">
     <h5 class="text-4xl font-bold text-[#222] mb-[15px]">
       ¡Pago Exitoso!
     </h5>
