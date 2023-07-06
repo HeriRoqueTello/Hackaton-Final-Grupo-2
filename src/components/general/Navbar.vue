@@ -48,6 +48,10 @@ export default {
     checkout: {
       type: Boolean,
       default: false
+    },
+    hidden: {
+      type: Boolean,
+      default: false
     }
   },
   components: {

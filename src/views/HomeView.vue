@@ -1,7 +1,7 @@
 <template>
   <header>
     <div>
-      <Navbar />
+      <Navbar :hidden="true" />
     </div>
   </header>
   <main class="">
@@ -45,7 +45,7 @@
       <CursosList></CursosList>
     </section>
     <section class="bg-gradient-to-b from-[#3015FD] to-[#5640FF] h-[30rem] md:h-72 px-4 lg:px-56 relative flex flex-col justify-end py-4 md:justify-center gap-4 text-white">
-      <img class="w-80 self-center md:hidden lg:block lg:absolute h-96 lg:h-auto lg:-top-24 lg:-left-28" src="../assets/Chinita_pacha.webp" alt="Chinita Pacha">
+      <img class="w-80 self-center md:hidden lg:block lg:absolute h-96 lg:h-auto lg:-top-24 lg:-left-28" src="../assets/Chinita_pacha.svg" alt="Chinita Pacha">
       <h4 class="text-lg font-bold Poppins">Sé parte de la comunidad</h4>
       <p class="text-sm md:w-full lg:w-2/4 Roboto">Programas semi-presenciales para el desarrollo de habilidades de programación a lo largo de todo el Stack tecnológico.</p>
       <p class="text-sm md:w-full lg:w-2/4 Roboto">Al finalizar sabrás cómo crear una página web y desarrollar la lógica detrás del funcionamiento de una aplicación, así como formar parte de una gran comunidad de desarrolladores</p>
