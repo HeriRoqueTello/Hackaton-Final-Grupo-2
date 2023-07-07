@@ -8,7 +8,7 @@
       <h3 class="text-[#fff] text-xl font-medium z-0 Poppins">
         {{ course.nombre }}
       </h3>
-      <RouterLink to="/" v-if="course.activo"
+      <RouterLink :to="`/curso/${course.id}`" v-if="course.activo"
         class="flex gap-x-[12px] items-center text-[#fff] text-sm font-bold self-end z-0 Poppins">
         <img src="/icons/plus-circle.png" alt="More Icon"> Ver más
       </RouterLink>
