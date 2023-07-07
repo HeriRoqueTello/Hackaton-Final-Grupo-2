@@ -40,7 +40,7 @@
         <div
           class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px]"
           :class="{ 'border-[#F22A40]': errors.name }">
-          <Field type="text" name="name" id="name" class="w-full text-xs font-bold text-[#222222] outline-0"
+          <Field type="text" name="name" id="name" class="w-full text-xs font-bold text-[#222222] outline-0 Roboto"
             autocomplete="off" required v-model="newUser.name" />
           <label for="name" class="Roboto">
             Nombres
@@ -51,7 +51,7 @@
         <div
           class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px]"
           :class="{ 'border-[#F22A40]': errors.lastname }">
-          <Field name="lastname" id="lastname" class="w-full text-xs font-bold text-[#222222] outline-0"
+          <Field name="lastname" id="lastname" class="w-full text-xs font-bold text-[#222222] outline-0 Roboto"
             autocomplete="off" required v-model="newUser.lastname" />
           <label for="lastname" class="Roboto">
             Apellidos
@@ -62,7 +62,7 @@
         <div
           class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px]"
           :class="{ 'border-[#F22A40]': errors.email }">
-          <Field type="text" name="email" id="email" class="w-full text-xs font-bold text-[#222222] outline-0"
+          <Field type="text" name="email" id="email" class="w-full text-xs font-bold text-[#222222] outline-0 Roboto"
             autocomplete="off" required v-model="newUser.email" />
           <label for="email" class="Roboto">
             Correo electrónico
@@ -74,7 +74,7 @@
           class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px] flex justify-between items-center"
           :class="{ 'border-[#F22A40]': errors.password01 }">
           <Field :type="typePassword01" name="password01" id="password01"
-            class="w-full text-xs font-bold text-[#222222] outline-0" autocomplete="off" required v-model="newUser.password" />
+            class="w-full text-xs font-bold text-[#222222] outline-0 Roboto" autocomplete="off" required v-model="newUser.password" />
           <label for="password01" class="Roboto">
             Contraseña
           </label>
@@ -86,7 +86,7 @@
           class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px] flex justify-between items-center"
           :class="{ 'border-[#F22A40]': errors.password02 }">
           <Field :type="typePassword02" name="password02" id="password02"
-            class="w-full text-xs font-bold text-[#222222] outline-0" autocomplete="off" required />
+            class="w-full text-xs font-bold text-[#222222] outline-0 Roboto" autocomplete="off" required />
           <label for="password02" class="Roboto">
             Repite contraseña
           </label>

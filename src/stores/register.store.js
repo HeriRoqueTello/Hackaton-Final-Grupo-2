@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { useAlertStore } from '@/stores/alert.store.js';
 import axios from 'axios';
 
 export const useRegisterStore = defineStore({
@@ -14,7 +15,8 @@ export const useRegisterStore = defineStore({
           window.location = '/login';
         })
         .catch(error => {
-          console.error('Error en el registro:', error);
+          console.error(`Ocurrió un error al registrarse: ${error}`);
+          useAlertStore().error(`Ocurrió un error al registrarse`);
         });
     }
   }
