@@ -34,6 +34,13 @@ export const useCoursesStore = defineStore({
         .catch(error => {
           console.error(`Se produjo un error al traer los cursos: ${error}`);
         });
+    },
+    async getDetalleCurso(id) {
+      const endpoint = '/cursos';
+
+      const { data } = await axios.get(`${this.apiURL}${endpoint}/${id}`)
+
+      return data;
     }
   }
 });
