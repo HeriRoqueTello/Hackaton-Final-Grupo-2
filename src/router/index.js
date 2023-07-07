@@ -52,6 +52,11 @@ const router = createRouter({
       name: 'pago-cancelado',
       component: () => import('../views/CancelView.vue')
     },
+    {
+      path: '/curso/:id',
+      name: 'detalles',
+      component: () => import('../views/CursoDetallesView.vue')
+    },
   ]
 })
 

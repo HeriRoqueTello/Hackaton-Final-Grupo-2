@@ -17,9 +17,12 @@
 </template>
 
 <script>
+import { useCoursesStore } from '@/stores/courses.store.js';
+
 export default {
   data() {
     return {
+      cursosStore: useCoursesStore(),
       cursos: [
         {
           image: 'imgs/front_end.png',
@@ -70,7 +73,7 @@ export default {
           id: 8
         },
       ]
-    };
+    }
   }
 };
 </script>
