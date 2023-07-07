@@ -4,7 +4,7 @@
       <Navbar />
     </div>
     <div
-      class="w-full h-[240px] bg-[url('imgs/banner2.png')] bg-center bg-no-repeat bg-cover lg:h-[440px] lg:bg-[url('imgs/banner.png')]">
+      class="w-full h-[240px] bg-[url('/imgs/banner2.png')] bg-center bg-no-repeat bg-cover lg:h-[440px] lg:bg-[url('/imgs/banner.png')]">
     </div>
   </header>
 
