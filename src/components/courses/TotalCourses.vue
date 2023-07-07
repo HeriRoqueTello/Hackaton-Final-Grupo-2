@@ -1,7 +1,7 @@
 <template>
   <ul
-    class="flex flex-wrap justify-center items-center gap-y-[15px] gap-x-[20px] min-[1366px]:justify-start min-[1366px]:gap-y-[40px] min-[1366px]:gap-x-[30px]">
-    <li v-for="course in coursesHome" :key="course.id"
+    class="flex flex-wrap justify-center items-center gap-y-[15px] gap-x-[20px] min-[1366px]:gap-y-[40px] min-[1366px]:gap-x-[30px]">
+    <li v-for="course in totalCourses" :key="course.id"
       class="relative w-full max-w-[355px] h-[222px] rounded-[10px] bg-center bg-no-repeat bg-cover flex flex-col justify-end p-[20px] gap-y-[15px] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-[10px] min-[1366px]:max-w-[344px] min-[1366px]:h-[320px]"
       :class="course.imagen ? 'before:bg-gradient-to-b from-[#00042500] to-[#000425]' : 'bg-[#000425]'"
       :style="`background-image: url(${course.imagen});`">
@@ -18,19 +18,19 @@
     </li>
   </ul>
 </template>
-
+  
 <script>
 import { useCoursesStore } from '@/stores/courses.store.js';
 
 export default {
   data() {
     return {
-      coursesHome: []
+      totalCourses: []
     };
   },
   async mounted() {
-    await useCoursesStore().getCoursesHome();
-    this.coursesHome = useCoursesStore().coursesHome;
+    await useCoursesStore().getTotalCourses();
+    this.totalCourses = useCoursesStore().totalCourses;
   }
 };
 </script>

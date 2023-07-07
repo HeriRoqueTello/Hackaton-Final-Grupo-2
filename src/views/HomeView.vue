@@ -43,6 +43,11 @@
       </h3>
       <!-- Componente Card 1 -->
       <CursosList></CursosList>
+      <RouterLink to="/cursos">
+        <button class="bg-[#5640ff] text-[#fff] font-bold rounded-[20px] py-[8px] px-[16px] text-sm mt-[30px]">
+          Ver todos los cursos
+        </button>
+      </RouterLink>
     </section>
     <section class="bg-gradient-to-b from-[#3015FD] to-[#5640FF] h-[30rem] md:h-72 px-4 lg:px-56 relative flex flex-col justify-end py-4 md:justify-center gap-4 text-white">
       <img class="w-80 self-center md:hidden lg:block lg:absolute h-96 lg:h-auto lg:-top-24 lg:-left-28" src="../assets/Chinita_pacha.svg" alt="Chinita Pacha">
@@ -50,7 +55,7 @@
       <p class="text-sm md:w-full lg:w-2/4 Roboto">Programas semi-presenciales para el desarrollo de habilidades de programación a lo largo de todo el Stack tecnológico.</p>
       <p class="text-sm md:w-full lg:w-2/4 Roboto">Al finalizar sabrás cómo crear una página web y desarrollar la lógica detrás del funcionamiento de una aplicación, así como formar parte de una gran comunidad de desarrolladores</p>
     </section>
-    <section class="px-4 md:px-20 my-20">
+    <section class="px-4 md:px-20 my-20 min-[1366px]:w-[60%]">
       <h4 class="text-base text-[#000425] font-bold mb-[30px] Poppins">Beneficios</h4>
       <!-- Componente 2 -->
       <BeneficiosList></BeneficiosList>
