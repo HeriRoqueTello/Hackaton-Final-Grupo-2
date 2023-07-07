@@ -21,7 +21,6 @@
 <script>
 import { useCoursesStore } from '@/stores/courses.store.js';
 import Loader from '@/components/general/Loader.vue'
-
 export default {
   data() {
     return {

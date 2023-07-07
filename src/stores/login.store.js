@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
+import { useGlobalStore } from '@/stores/global.store.js';
 
 export const useLoginStore = defineStore('auth', {
   state: () => ({
@@ -9,20 +10,16 @@ export const useLoginStore = defineStore('auth', {
       endpoint: '/usuarios'
     }),
 
-    actions: {
-      async login(email, password) {
+  actions: {
+    async login(email, password) {
       try{
-        const { data } = await axios.get(`${this.apiURL}${this.endpoint}`, {
-          params: {
-            email,
-            password
-          }
-        });     
-        if(data.length > 1){
+        const { data } = await axios.get(`${this.apiURL}${this.endpoint}?email=${email}&password=${password}`);     
+        if(data[0] === undefined ){
           return "Datos ingresados incorrectos"
         } else {
-          this.user = data;
-          this.$route.push('/home');
+          this.user = data[0];
+          console.log(this.user);
+          return 'Logeado';
         }
       }catch(error) {
         console.error(error);
@@ -31,7 +28,6 @@ export const useLoginStore = defineStore('auth', {
     },
 
     logout() {
-      
       this.isAuthenticated = false;
       this.user = null;
       this.$route.push('/home');
