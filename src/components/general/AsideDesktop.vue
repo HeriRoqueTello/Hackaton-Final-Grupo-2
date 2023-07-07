@@ -4,8 +4,8 @@
       <img class="h-[34px]" src="/Logo.svg" alt="Logo">
     </RouterLink>
     <div class="lg:self-end flex flex-col items-end text-white text-center lg:text-right">
-      <h2 class="text-2xl w-auto lg:w-[30rem] lg:text-4xl font-bold leading-tight mb-8">¡Explota todo tu potencial tecnológico!</h2>
-      <p class="text-lg w-auto lg:w-52">Con nuestros programas de especialización</p>
+      <h2 class="text-2xl w-auto lg:w-[30rem] lg:text-4xl font-bold leading-tight mb-8 Poppins">¡Explota todo tu potencial tecnológico!</h2>
+      <p class="text-lg w-auto lg:w-60 Poppins">Con nuestros programas de especialización</p>
     </div>
     <div class="lg:self-start flex gap-4 mt-4 flex-col">
       <p class="text-sm font-semibold text-white">Con el respaldo de:</p>

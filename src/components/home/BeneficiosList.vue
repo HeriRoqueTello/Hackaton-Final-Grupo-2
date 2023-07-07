@@ -1,12 +1,16 @@
 <template>
-  <ul class="w-full flex flex-col gap-y-[20px] min-[1366px]:gap-y-[30px] min-[1366px]:w-[60%]">
+  <ul class="w-full flex flex-col gap-y-[20px] min-[1366px]:gap-y-[30px]">
     <li v-for="beneficio in beneficios" :key="beneficio.id" class="bg-[#F2F3F5] rounded-[10px] flex p-[30px] gap-x-[50px]">
       <picture class="flex items-center">
         <img class="min-w-[50px] min-h-[50px] min-[1366px]:min-w-[60px] min-[1366px]:min-h-[60px]" :src="beneficio.icon" :alt="beneficio.title">
       </picture>
       <div class="flex flex-col justify-center gap-y-[20px]">
-        <h5 class="font-medium text-base text-[#000425] Poppins">{{ beneficio.title }}</h5>
-        <p class="hidden min-[600px]:block text-sm text-[#000425] Roboto">{{ beneficio.description }}</p>
+        <h5 class="font-medium text-base text-[#000425] Poppins">
+          {{ beneficio.title }}
+        </h5>
+        <p class="hidden min-[600px]:block text-sm text-[#000425] Roboto">
+          {{ beneficio.description }}
+        </p>
       </div>
     </li>
   </ul>
