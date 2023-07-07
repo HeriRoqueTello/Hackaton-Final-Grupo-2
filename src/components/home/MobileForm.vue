@@ -7,45 +7,36 @@
         <input type="text" pattern="[a-Z]" required class="w-3/5 py-3 rounded-md my-2 border-[#8b9099] border px-1 Roboto" placeholder="Nombre">
         <input type="tel" pattern="[0-9]{9}" required class="w-3/5 py-3 rounded-md my-2 border-[#8b9099] border px-1 Roboto" placeholder="Celular">
         <input type="email" required class="w-3/5 py-3 rounded-md border-[#8b9099] my-2 border px-1 Roboto" placeholder="Correo electrónico">
-        <input type="text" pattern="[a-Z]" class="w-3/5 py-3 rounded-md my-2 border-[#8b9099] border px-1 Roboto" placeholder="Programa">
+        <select v-model="programa" class="w-3/5 py-3 rounded-md my-2 border-[#8b9099] border px-1 Roboto">
+            <option value="programa" disabled>Programa</option>
+            <option v-for="curso in cursos" :value="curso.nombre" :key="curso.id">{{ curso.nombre }}</option>
+        </select>
         <span for="" class="w-2/3">         
-            <p class="mb-10 text-xs Roboto"><input type="checkbox" class=""> Acepto las Politicas de privacidad.</p>
+            <p class="mb-10 text-xs Roboto"><input type="checkbox" checked class=""> Acepto las Politicas de privacidad.</p>
         </span>
-        <button type="submit" class=" w-3/5 text-white bg-[#5640FF] rounded font-bold py-3 px-10 text-sm w Poppins">
+        <RouterLink to="/register" class=" w-3/5 text-white text-center bg-[#5640FF] rounded font-bold py-3 px-10 text-sm w Poppins">
           Quiero Postular
-        </button> 
+        </RouterLink> 
       </div>
     </div>
   </div>
-  </template>
+</template>
+
+
+<script>
+import { useCoursesStore } from '@/stores/courses.store.js';
+    export default {
+        data() {
+            return {
+                programa: 'programa',
+                cursos: null,
+            }
+        },
+        async mounted() {
+            await useCoursesStore().getTotalCourses();
+            this.cursos = useCoursesStore().totalCourses;
+        }
+    }
+</script>
   
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-
-/* .relative {
-  position: relative;
-}
-
-.phone-image {
-  background-image: url('/./src/assets/mobile.png');
-  background-repeat: no-repeat;
-  background-position: right;
-  z-index: 5;
-  top: 50%;
-  right: 170px;
-  transform: translate(0, -50%);
-  width: 350px;
-  height: 600px;
-}
-
-.form-container {
-  top: 50%;
-  right: 50px; 
-  transform: translate(0, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  z-index: 5;
-} */
-</style>
