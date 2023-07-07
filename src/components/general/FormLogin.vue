@@ -35,7 +35,7 @@
         <div
           class="relative w-full border-solid border-[1px] border-[#8b9099] rounded-[5px] pt-[20px] px-[15px] pb-[16px] mb-[20px]">
           <input type="email" name="email" id="email" class="w-full text-xs font-bold text-[#222222] outline-0"
-            autocomplete="off" v-model="username" required>
+            autocomplete="off" v-model="email" required>
           <label for="email">Correo electrónico</label>
         </div>
         <div v-if="showPassword01"
@@ -56,7 +56,7 @@
             @click="showPassword01 = true">
         </div>
         <button
-          class="mt-[30px] mb-[60px] bg-primary w-full rounded-[10px] py-[18px] text-sm font-bold text-[#ffffff]">Registrarse</button>
+          class="mt-[30px] mb-[60px] bg-primary w-full rounded-[10px] py-[18px] text-sm font-bold text-[#ffffff]">Login</button>
         <a href="#" class="text-[#894bf5] text-sm decoration-[#894bf5] underline font-semibold self-center">¿Olvidaste tu contraseña?</a>
       </form>
     </div>
@@ -69,7 +69,7 @@ import { useLoginStore } from '@/stores/login.store.js';
 export default {
   data() {
     return {
-      username: '',
+      email: '',
       password: '',
     };  
   },
@@ -80,7 +80,7 @@ export default {
         
         const authStore = useLoginStore();
 
-        await authStore.login(this.username, this.password);
+        await authStore.login(this.email, this.password);
         this.$router.push('/home');
 
       } catch (error) {

@@ -10,11 +10,20 @@ export const useLoginStore = defineStore('auth', {
     }),
 
     actions: {
-      async login(username, password) {
+      async login(email, password) {
       try{
-        const response = await this.axios.post(`${this.apiURL}${this.endpoint}`, { username, password });     
-        this.user = response.data.user;
-        router.push('/home');
+        const { data } = await axios.get(`${this.apiURL}${this.endpoint}`, {
+          params: {
+            email,
+            password
+          }
+        });     
+        if(data.length > 1){
+          return "Datos ingresados incorrectos"
+        } else {
+          this.user = data;
+          this.$route.push('/home');
+        }
       }catch(error) {
         console.error(error);
         throw new Error('Error al iniciar sesión');
@@ -25,7 +34,7 @@ export const useLoginStore = defineStore('auth', {
       
       this.isAuthenticated = false;
       this.user = null;
-      router.push('/login');
+      this.$route.push('/home');
     },
   },
 });
