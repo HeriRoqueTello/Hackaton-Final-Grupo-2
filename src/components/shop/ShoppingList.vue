@@ -8,7 +8,7 @@
         <img src="/icons/arrow-left-dark.svg" alt="Arrow Left Icon" class="cursor-pointer w-[20px]">
       </a>
       
-      <h4 class="text-[#FFFFFF] text-sm font-bold lg:text-xl lg:text-[#222222]">
+      <h4 class="text-[#FFFFFF] text-sm font-bold lg:text-xl lg:text-[#222222] Poppins">
         Carrito de compras
       </h4>
     </div>
@@ -22,29 +22,29 @@
 
         <div class="flex flex-col justify-between">
           <div class="flex flex-col mb-[12px]">
-            <p class="text-[#222222] font-bold text-xs mb-[8px] min-[550px]:text-base">
+            <p class="text-[#222222] font-bold text-xs mb-[8px] min-[550px]:text-base Roboto">
               {{ course.title }}
             </p>
-            <span class="text-[#5640FF] font-bold text-xs min-[550px]:text-sm">
+            <span v-if="course.discount" class="text-[#5640FF] font-bold text-xs min-[550px]:text-sm Roboto">
               Dto. {{ course.discount }}%
             </span>
-            <span v-if="course.gift" class="text-[#222222] text-xs min-[550px]:text-sm">
+            <span v-if="course.gift" class="text-[#222222] text-xs min-[550px]:text-sm Roboto">
               Regalo para: {{ course.gift }}
             </span>
           </div>
 
           <div class="flex justify-between gap-[5px] flex-wrap">
-            <button class="text-[#5640FF] font-bold text-xs">
+            <button class="text-[#5640FF] font-bold text-xs Poppins">
               Eliminar
             </button>
-            <span class="text-[#222222] font-bold text-xs min-[550px]:hidden">
+            <span class="text-[#222222] font-bold text-xs min-[550px]:hidden Poppins">
               {{ formatPrice(course.price) }}
             </span>
           </div>
         </div>
 
         <div class="hidden min-[550px]:flex min-[550px]:justify-end">
-          <span class="text-[#222222] font-bold text-base">
+          <span class="text-[#222222] font-bold text-base Poppins">
             {{ formatPrice(course.price) }}
           </span>
         </div>

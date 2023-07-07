@@ -5,16 +5,35 @@ export const useCoursesStore = defineStore({
   id: 'courses',
   state: () => ({
     apiURL: 'https://pachatube-db.onrender.com',
-    endpoint: '/cursos'
+    coursesHome: [],
+    totalCourses: []
   }),
   actions: {
-    async getCursos() {
-      const { data } = await axios.get(`${this.apiURL}${this.endpoint}`)
-      return data
+    async getCoursesHome() {
+      const endpoint = '/cursos';
+      this.coursesHome = [];
+
+      await axios.get(`${this.apiURL}${endpoint}`)
+        .then(response => {
+          for (let i = 0; i <= 3; i++) {
+            this.coursesHome.push(response.data[i]);
+          };
+        })
+        .catch(error => {
+          console.error(`Se produjo un error al traer los cursos: ${error}`);
+        });
     },
-    async getDetalleCurso(id){
-      const { data } = await axios.get(`${this.apiURL}${this.endpoint}/${id}`)
-      return data
+    async getTotalCourses() {
+      const endpoint = '/cursos';
+      this.totalCourses = [];
+
+      await axios.get(`${this.apiURL}${endpoint}`)
+        .then(response => {
+          this.totalCourses = response.data;
+        })
+        .catch(error => {
+          console.error(`Se produjo un error al traer los cursos: ${error}`);
+        });
     }
   }
 });
