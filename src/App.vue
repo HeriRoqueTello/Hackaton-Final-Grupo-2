@@ -1,23 +1,19 @@
-<script>
-import { RouterLink, RouterView } from 'vue-router'
-import Navbar from './components/general/Navbar.vue';
-
-export default {
-  components: {
-    Navbar,
-  }
-}
-
+<script setup>
+import { RouterView } from 'vue-router'
+import AlertComponent from '@/components/general/AlertComponent.vue';
 </script>
 
 <template>
-  <header>
-    <div>
-      <Navbar />
-    </div>
-  </header>
+  <AlertComponent></AlertComponent>
   <RouterView />
 </template>
 
-<style scoped>
+<style>
+.Poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.Roboto {
+  font-family: 'Roboto', sans-serif;
+}
 </style>
