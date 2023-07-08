@@ -98,7 +98,7 @@ export default {
       const authStore = useLoginStore();
       try {
         const resp = await authStore.login(this.email, this.valuePassword)
-        resp === 'Logeado' && this.$router.push('/')
+        resp === 'Logeado' && authStore.reload()
       } catch (error) {
         console.error(error);
         console.log('Error al iniciar sesión')

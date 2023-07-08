@@ -14,12 +14,14 @@
         <p class="mt-[5px] text-xs text-center text-[#0083FF]">
             Los cupones de descuento estarán disponible próximamente
         </p>
-        <StripeCheckout  class="bg-[#5640ff] rounded-xl text-white font-bold text-center next py-4 mt-9" />
+        <a href="/register" v-if="!globalStore.usuario.isLogin" class="bg-[#5640ff] rounded-xl text-white font-bold text-center next py-4 mt-9">Registrate para continuar</a>
+        <StripeCheckout v-if="globalStore.usuario.isLogin"  class="bg-[#5640ff] rounded-xl text-white font-bold text-center next py-4 mt-9" />
     </div>
 </template>
 <script>
 import SendIconVue from '../Icons/SendIcon.vue';
 import StripeCheckout from './StripeCheckout.vue';
+import { useGlobalStore } from '@/stores/global.store.js';
 
 export default {
     components: {
@@ -29,7 +31,7 @@ export default {
 
     data() {
         return {
-
+            globalStore: useGlobalStore(),
         }
     },
 }
