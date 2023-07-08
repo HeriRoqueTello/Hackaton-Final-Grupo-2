@@ -13,9 +13,9 @@
       <MobileForm class="hidden xl:block" />
     </section>
     <div class="fixed md:hidden bottom-4 right-4 flex flex-col items-end gap-4 z-50">
-      <div class="w-auto bg-green-400 p-3 rounded-full cursor-pointer">
+      <a href="https://api.whatsapp.com/send?phone=+51924288288&text=¡Hola!%20Quiero%20recibir%20mayor%20información%20y%20descuentos%20exclusivos%20–%20código%20WEB" target="_blank" class="w-auto bg-green-400 p-3 rounded-full cursor-pointer">
         <img class="w-7 h-7" src="/WhatsApp_logo.svg" alt="Whatsapp logo">
-      </div>
+      </a>
       <div class="flex flex-row items-center px-4 py-3 bg-[#FF1558] text-white rounded-3xl">
         <PencilIcon class="h-5" />
         <a href="#FormInscribete" class="font-semibold Poppins">Inscríbete</a>

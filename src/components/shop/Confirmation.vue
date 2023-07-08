@@ -7,9 +7,9 @@
       <p class="paragraph my-3">
         La boleta o factura solicitada será enviada a tu correo en unos momentos.
       </p>
-      <button class="bg-[#5640ff] rounded-xl text-white text-center next py-4 mt-4">
+      <RouterLink to="/mis-cursos" class="bg-[#5640ff] rounded-xl text-white text-center next py-4 mt-6 block">
         Volver a mis cursos
-      </button>
+      </RouterLink>
     </div>
   </div>
 </template>

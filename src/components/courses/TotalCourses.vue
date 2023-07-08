@@ -1,4 +1,14 @@
 <template>
+  <div class="text-right my-8">
+    <label for="SortBy" class="sr-only">SortBy</label>
+    <select @change="filterCursos" v-model="filtro" id="SortBy" class="h-10 rounded border px-2 border-gray-400 text-sm text-right">
+      <option value="void" disabled>Filtrar por</option>
+      <option value="todos">Todos</option>
+      <option value="codigo">Escuela de Codigo</option>
+      <option value="gestion">Gestion</option>
+      <option value="diseno">Diseño</option>
+    </select>
+  </div>
   <Loader class="w-screen mx-auto" v-if="!loading" />
   <ul v-else
     class="flex flex-wrap justify-center items-center gap-y-[15px] gap-x-[20px] min-[1366px]:gap-y-[40px] min-[1366px]:gap-x-[30px]">
@@ -32,7 +42,24 @@ export default {
     return {
       totalCourses: [],
       loading: false,
+      filtro: 'void'
     };
+  },
+  methods: {
+    async filterCursos(){
+      try {
+        if(this.filtro !== 'todos'){
+          await useCoursesStore().getFilterCourses(this.filtro);
+          this.totalCourses = useCoursesStore().totalCourses;
+        }else{
+          await useCoursesStore().getTotalCourses();
+          this.totalCourses = useCoursesStore().totalCourses;
+        }
+        this.loading = true
+      } catch (error) {
+        console.error(error);
+      }
+    }
   },
   async mounted() {
     this.loading = false
