@@ -5,6 +5,7 @@ export const useCartStore = defineStore({
   id: 'cart',
   state: () => ({
     productos: localStorage.getItem('productos') ? JSON.parse(localStorage.getItem('productos')) : [],
+    myCourses: localStorage.getItem('cursosComprados') ? JSON.parse(localStorage.getItem('cursosComprados')) : [],
     sumaTotalPrecio: null,
   }),
   actions: {
@@ -86,29 +87,32 @@ export const useCartStore = defineStore({
         localStorage.setItem('productos', JSON.stringify(updatedProductos));
       }
     },
-    calcularSumaTotal() {
-      const productosEnLocalStorage = localStorage.getItem('productos');
+    calcularSumaTotal(clave) {
+      const productosEnLocalStorage = localStorage.getItem(clave);
       if (productosEnLocalStorage) {
         const productos = this.productos;
         let sumaTotal = 0;
-    
+
         productos.forEach((producto) => {
           let precioFinal = producto.precio;
-          
+
           if (producto.descuento) {
             const descuento = (producto.precio * producto.descuento) / 100;
             precioFinal = producto.precio - descuento;
           }
-          
+
           const valorProducto = precioFinal * producto.cantidad;
-          
+
           sumaTotal += valorProducto;
         });
         this.sumaTotalPrecio = sumaTotal
         return sumaTotal;
       }
-    
+
       return 0;
-    }
+    },
+    async getProductsResume() {
+      this.productos = JSON.parse(localStorage.getItem('cursosComprados'));
+    },
   }
 });
