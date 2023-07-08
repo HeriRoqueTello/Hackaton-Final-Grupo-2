@@ -3,13 +3,16 @@ import { defineStore } from 'pinia';
 export const useGlobalStore = defineStore({
   id: 'global',
   state: () => ({
-    usuario: null
+    usuario: JSON.parse(localStorage.getItem('USUARIO')) ?? { isLogin: false },
   }),
   actions: {
-    setLocalStore(value) {
-      localStorage.setItem('usuario', value)
+    setLogin(value = false) {
+      const store = {
+        isLogin: value,
+      }
+      localStorage.setItem('USUARIO', JSON.stringify(store))
     },
-    getLocalStore(){
+    getLogin(){
       return localStorage.getItem('usuario')
     }
   }
