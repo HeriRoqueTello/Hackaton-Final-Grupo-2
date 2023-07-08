@@ -90,7 +90,7 @@ export default {
   },
   computed: {
     totalPriceFormatted() {
-      return this.formatPrice(useCartStore().calcularSumaTotal('cursosComprados'));
+      return this.formatPrice(useCartStore().resumenSumaTotal('cursosComprados'));
     }
   }
 };

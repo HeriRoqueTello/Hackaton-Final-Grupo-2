@@ -6,7 +6,7 @@ export const useCartStore = defineStore({
   state: () => ({
     productos: localStorage.getItem('productos') ? JSON.parse(localStorage.getItem('productos')) : [],
     myCourses: localStorage.getItem('cursosComprados') ? JSON.parse(localStorage.getItem('cursosComprados')) : [],
-    sumaTotalPrecio: null,
+    sumaTotalPrecio: 0,
   }),
   actions: {
     async addProduct(productId) {
@@ -113,6 +113,29 @@ export const useCartStore = defineStore({
     },
     async getProductsResume() {
       this.productos = JSON.parse(localStorage.getItem('cursosComprados'));
+    },
+    resumenSumaTotal(clave) {
+      const productosEnLocalStorage = localStorage.getItem(clave);
+      if (productosEnLocalStorage) {
+        const productos = this.myCourses;
+        let sumaTotal = 0;
+
+        productos.forEach((producto) => {
+          let precioFinal = producto.precio;
+
+          if (producto.descuento) {
+            const descuento = (producto.precio * producto.descuento) / 100;
+            precioFinal = producto.precio - descuento;
+          }
+
+          const valorProducto = precioFinal * producto.cantidad;
+
+          sumaTotal += valorProducto;
+        });
+        return sumaTotal;
+      }
+
+      return 0;
     },
   }
 });

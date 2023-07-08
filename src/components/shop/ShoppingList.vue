@@ -13,7 +13,7 @@
       </h4>
     </div>
 
-    <p v-if="coursesCart.length === 0 || !coursesCart" class="p-[20px]">
+    <p v-if="!coursesCart || coursesCart.length === 0" class="p-[20px]">
       No tienes productos en el Carrito de Compras
     </p>
     <ul v-else class="w-full px-[20px] mt-[50px] flex flex-col gap-y-[50px] min-[320px]:gap-y-[20px]">

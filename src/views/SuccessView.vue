@@ -33,6 +33,7 @@ export default {
     const productos = JSON.parse(localStorage.getItem('productos'));
     const cursosComprados = [...productos];
     localStorage.setItem('cursosComprados', JSON.stringify(cursosComprados));
+    localStorage.removeItem('productos');
   }
 }
 </script>
