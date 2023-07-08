@@ -85,7 +85,7 @@ export default {
   computed: {
     numberCheckout(){
       useCartStore().getProductsCart();
-      return useCartStore().productos.length;
+      return useCartStore().productos?.length ?? 0;
     }
   }
 }
