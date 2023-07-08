@@ -1,17 +1,20 @@
 <template>
     <div class="container-next py-12 px-10 shadow-xl mx-auto mt-12 lg:mt-0 lg:self-start">
-        <div class="grid grid-cols-6 gap-4">
-            <h2 class="text-[#5640FF] col-start-1 col-end-3 text-left subtotal m">Subtotal</h2>
-            <label for="" class="col-end-7 col-span-2 text-right subtotal">S/ 600.00</label>
+        <div class="w-full flex flex-wrap justify-between items-center gap-4">
+            <h2 class="text-[#5640FF] subtotal ">Subtotal</h2>
+            <label for="" class="subtotal">S/ 600.00</label>
         </div>
         <div
-            class="row w-full border-solid border-[1px] border-[#C4C4C4] rounded-[5px] flex justify-between items-center px-4 mt-6">
-            <input type="text" placeholder="Agrega un código de descuento" class="descuento">
-            <button class="flex items-center">
+            class="row w-full bg-[#F1F1F1] border-solid border-[1px] border-[#C4C4C4] rounded-[5px] flex justify-between items-center px-4 mt-6">
+            <input type="text" placeholder="Agrega un código de descuento" class="descuento bg-[#F1F1F1]" disabled>
+            <button class="flex items-center cursor-default">
                 <SendIconVue />
             </button>
         </div>
-        <StripeCheckout  class="bg-[#5640ff] rounded-xl text-white text-center next py-4 mt-9" />
+        <p class="mt-[5px] text-xs text-center text-[#0083FF]">
+            Los cupones de descuento estarán disponible próximamente
+        </p>
+        <StripeCheckout  class="bg-[#5640ff] rounded-xl text-white font-bold text-center next py-4 mt-9" />
     </div>
 </template>
 <script>

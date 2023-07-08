@@ -1,5 +1,6 @@
 <template>
-  <ul
+  <Loader class="w-screen mx-auto" v-if="!loading" />
+  <ul v-else
     class="flex flex-wrap justify-center items-center gap-y-[15px] gap-x-[20px] min-[1366px]:justify-start min-[1366px]:gap-y-[40px] min-[1366px]:gap-x-[30px]">
     <li v-for="course in coursesHome" :key="course.id"
       class="relative w-full max-w-[355px] h-[222px] rounded-[10px] bg-center bg-no-repeat bg-cover flex flex-col justify-end p-[20px] gap-y-[15px] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-[10px] min-[1366px]:max-w-[344px] min-[1366px]:h-[320px]"
@@ -21,16 +22,27 @@
 
 <script>
 import { useCoursesStore } from '@/stores/courses.store.js';
+import Loader from '@/components/general/Loader.vue'
 
 export default {
+  components: {
+    Loader
+  },
   data() {
     return {
-      coursesHome: []
+      coursesHome: [],
+      loading: false,
     };
   },
   async mounted() {
-    await useCoursesStore().getCoursesHome();
-    this.coursesHome = useCoursesStore().coursesHome;
+    this.loading = false
+    try {
+      await useCoursesStore().getCoursesHome();
+      this.coursesHome = useCoursesStore().coursesHome;
+      this.loading = true
+    } catch (error) {
+      console.error(error);
+    }
   }
 };
 </script>

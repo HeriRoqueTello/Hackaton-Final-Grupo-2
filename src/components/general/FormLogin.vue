@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative h-screen px-[20px] flex flex-col lg:justify-between min-[1366px]:justify-start">
+    class="relative h-screen overflow-auto px-[20px] grid grid-cols-[100%] grid-rows-[60px_auto]">
     <div class="w-full flex justify-around pt-[20px] border-b-[1px] border-solid border-[#f8f8fa]">
       <button
         class="w-[50%] flex justify-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.16)] border-b-[5px] border-solid border-[#000425] min-[1366px]:border-[#222222]">
@@ -17,7 +17,7 @@
       </RouterLink>
     </div>
 
-    <div class="w-full">
+    <div class="w-full self-center">
       <div class="mt-[32px]">
         <p class="text-xs text-center text-[#222222] mb-[15px] Roboto">Puedes iniciar sesión con:</p>
         <div class="w-full flex justify-center gap-x-[17px]">
