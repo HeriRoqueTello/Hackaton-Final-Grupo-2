@@ -12,9 +12,9 @@
       Gracias por confiar en nosotros. ¡Su compra ha sido realizada con éxito!
     </p>
     <div class="flex flex-wrap gap-[10px]">
-      <RouterLink to="/resumen" class="bg-[#5640ff] text-[#fff] font-bold rounded-[20px] py-[8px] px-[16px] text-sm">
+      <a href="/resumen" class="bg-[#5640ff] text-[#fff] font-bold rounded-[20px] py-[8px] px-[16px] text-sm">
         Ver resumen de compra
-      </RouterLink>
+      </a>
       <RouterLink to="/" class="bg-[#5640ff] text-[#fff] font-bold rounded-[20px] py-[8px] px-[16px] text-sm">
         Volver a la página principal
       </RouterLink>
@@ -32,7 +32,20 @@ export default {
   mounted() {
     const productos = JSON.parse(localStorage.getItem('productos'));
     const cursosComprados = [...productos];
+    
     localStorage.setItem('cursosComprados', JSON.stringify(cursosComprados));
+    if(JSON.parse(localStorage.getItem('cursosComprados'))){
+      const oldCursos = JSON.parse(localStorage.getItem('Miscursos')) ?? null;
+      const newCursos = JSON.parse(localStorage.getItem('cursosComprados'));
+      if(oldCursos === null){
+        localStorage.setItem('Miscursos', JSON.stringify(cursosComprados));
+        return
+      }
+      const totalCursos = [...oldCursos, ...newCursos]
+      localStorage.setItem('Miscursos', JSON.stringify(totalCursos));
+    }else{
+      localStorage.setItem('Miscursos', JSON.stringify(cursosComprados));
+    }
     localStorage.removeItem('productos');
   }
 }
