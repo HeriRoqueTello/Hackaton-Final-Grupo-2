@@ -46,6 +46,7 @@ export default {
     }else{
       localStorage.setItem('Miscursos', JSON.stringify(cursosComprados));
     }
+    localStorage.removeItem('productos');
   }
 }
 </script>
