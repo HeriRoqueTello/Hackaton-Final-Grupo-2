@@ -12,9 +12,9 @@
       Gracias por confiar en nosotros. ¡Su compra ha sido realizada con éxito!
     </p>
     <div class="flex flex-wrap gap-[10px]">
-      <RouterLink to="/resumen" class="bg-[#5640ff] text-[#fff] font-bold rounded-[20px] py-[8px] px-[16px] text-sm">
+      <a href="/resumen" class="bg-[#5640ff] text-[#fff] font-bold rounded-[20px] py-[8px] px-[16px] text-sm">
         Ver resumen de compra
-      </RouterLink>
+      </a>
       <RouterLink to="/" class="bg-[#5640ff] text-[#fff] font-bold rounded-[20px] py-[8px] px-[16px] text-sm">
         Volver a la página principal
       </RouterLink>
