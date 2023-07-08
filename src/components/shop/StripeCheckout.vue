@@ -16,6 +16,8 @@
 <script>
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
 const url = 'https://hackaton-final-grupo-2-dev.netlify.app';
+import { useCartStore } from '@/stores/cart.store.js';
+
 export default {
   components: {
     StripeCheckout,
@@ -23,17 +25,9 @@ export default {
   data () {
     this.publishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
     return {
+      coursesCart: [],
       loading: false,
-      lineItems: [
-        {
-          price: 'price_1NQIEzF6ZEDyl9rhQlcKrn9I', // The id of the one-time price you created in your Stripe dashboard
-          quantity: 1,
-        },
-        {
-          price: 'price_1NQINGF6ZEDyl9rhBB4kbWBk', // The id of the one-time price you created in your Stripe dashboard
-          quantity: 1,
-        },
-      ],
+      lineItems: [],
       successURL: `${url}/resumen`,
       cancelURL: `${url}/pago/cancelado`,
     };
@@ -41,7 +35,23 @@ export default {
   methods: {
     submit () {
       // You will be redirected to Stripe's secure checkout page
+      this.onLineItems()
       this.$refs.checkoutRef.redirectToCheckout();
+    },
+    onLineItems() {
+      for( let curso of this.refresh ){
+        const item = {
+          price: curso.idstripe,
+          quantity: curso.cantidad
+        }
+        this.lineItems.push(item)
+      }
+    }
+  },
+  computed: {
+    refresh() {
+      useCartStore().getProductsCart();
+      return useCartStore().productos;
     },
   },
 };

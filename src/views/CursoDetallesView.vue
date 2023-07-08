@@ -153,5 +153,29 @@ p {
   .botones {
     width: auto;
   }
+
 }
+
+@media (max-width: 767px) {
+  .description {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -50%;
+    font-size: 8px;
+  }
+
+  .certificado-container {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-top: 30%;
+  }
+
+  .botones {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+}
+
+
 </style>
