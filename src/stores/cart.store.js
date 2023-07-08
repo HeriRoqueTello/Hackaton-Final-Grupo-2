@@ -4,7 +4,7 @@ import { useCoursesStore } from '@/stores/courses.store.js';
 export const useCartStore = defineStore({
   id: 'cart',
   state: () => ({
-    productos: localStorage.getItem('datos') ? JSON.parse(localStorage.getItem('datos')) : [],
+    productos: localStorage.getItem('productos') ? JSON.parse(localStorage.getItem('productos')) : [],
   }),
   actions: {
     async addProduct(productId) {
@@ -37,6 +37,77 @@ export const useCartStore = defineStore({
       }
 
       localStorage.setItem('productos', JSON.stringify(productos));
+    },
+    async getProductsCart() {
+      this.productos = JSON.parse(localStorage.getItem('productos'));
+    },
+    async increaseProductQuantity(idstripe) {
+      const productosEnLocalStorage = localStorage.getItem('productos');
+      if (productosEnLocalStorage) {
+        const productos = JSON.parse(productosEnLocalStorage);
+        const updatedProductos = productos.map((producto) => {
+          if (producto.idstripe === idstripe) {
+            return {
+              ...producto,
+              cantidad: producto.cantidad + 1
+            };
+          }
+          return producto;
+        });
+        localStorage.setItem('productos', JSON.stringify(updatedProductos));
+      }
+    },
+    async decreaseProductQuantity(idstripe) {
+      const productosEnLocalStorage = localStorage.getItem('productos');
+      if (productosEnLocalStorage) {
+        const productos = JSON.parse(productosEnLocalStorage);
+        const updatedProductos = productos.map((producto) => {
+          if (producto.idstripe === idstripe) {
+            const newQuantity = producto.cantidad - 1;
+            if (newQuantity <= 0) {
+              return null;
+            }
+            return {
+              ...producto,
+              cantidad: newQuantity
+            };
+          }
+          return producto;
+        }).filter(Boolean);
+        localStorage.setItem('productos', JSON.stringify(updatedProductos));
+      }
+    },
+    async deleteProduct(idstripe) {
+      const productosEnLocalStorage = localStorage.getItem('productos');
+      if (productosEnLocalStorage) {
+        const productos = JSON.parse(productosEnLocalStorage);
+        const updatedProductos = productos.filter((producto) => producto.idstripe !== idstripe);
+        localStorage.setItem('productos', JSON.stringify(updatedProductos));
+      }
+    },
+    calcularSumaTotal() {
+      const productosEnLocalStorage = localStorage.getItem('productos');
+      if (productosEnLocalStorage) {
+        const productos = JSON.parse(productosEnLocalStorage);
+        let sumaTotal = 0;
+    
+        productos.forEach((producto) => {
+          let precioFinal = producto.precio;
+          
+          if (producto.descuento) {
+            const descuento = (producto.precio * producto.descuento) / 100;
+            precioFinal = producto.precio - descuento;
+          }
+          
+          const valorProducto = precioFinal * producto.cantidad;
+          
+          sumaTotal += valorProducto;
+        });
+    
+        return sumaTotal;
+      }
+    
+      return 0;
     }
   }
 });
