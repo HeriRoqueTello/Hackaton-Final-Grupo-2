@@ -168,6 +168,7 @@ p {
     position: static;
     width: 100%;
     text-align: center;
+    margin-top: 30%;
   }
 
   .botones {
