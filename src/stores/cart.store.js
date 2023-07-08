@@ -6,6 +6,7 @@ export const useCartStore = defineStore({
   state: () => ({
     productos: localStorage.getItem('productos') ? JSON.parse(localStorage.getItem('productos')) : [],
     myCourses: localStorage.getItem('cursosComprados') ? JSON.parse(localStorage.getItem('cursosComprados')) : [],
+    sumaTotalPrecio: null,
   }),
   actions: {
     async addProduct(productId) {
@@ -89,7 +90,7 @@ export const useCartStore = defineStore({
     calcularSumaTotal(clave) {
       const productosEnLocalStorage = localStorage.getItem(clave);
       if (productosEnLocalStorage) {
-        const productos = JSON.parse(productosEnLocalStorage);
+        const productos = this.productos;
         let sumaTotal = 0;
 
         productos.forEach((producto) => {
@@ -104,7 +105,7 @@ export const useCartStore = defineStore({
 
           sumaTotal += valorProducto;
         });
-
+        this.sumaTotalPrecio = sumaTotal
         return sumaTotal;
       }
 
