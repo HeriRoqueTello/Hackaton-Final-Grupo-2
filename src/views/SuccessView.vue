@@ -28,6 +28,11 @@ import Navbar from '@/components/general/Navbar.vue';
 export default {
   components: {
     Navbar,
+  },
+  mounted() {
+    const productos = JSON.parse(localStorage.getItem('productos'));
+    const cursosComprados = [...productos];
+    localStorage.setItem('cursosComprados', JSON.stringify(cursosComprados));
   }
 }
 </script>

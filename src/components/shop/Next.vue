@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       globalStore: useGlobalStore(),
-      precioTotal: this.formatPrice(useCartStore().calcularSumaTotal())
+      precioTotal: this.formatPrice(useCartStore().calcularSumaTotal('productos'))
     };
   },
   methods: {
@@ -43,7 +43,12 @@ export default {
         style: 'currency',
         currency: 'PEN'
       });
-    }
+    },
+  },
+  mounted() {
+    document.addEventListener('click', () => {
+      this.precioTotal = this.formatPrice(useCartStore().calcularSumaTotal('productos'));
+    });
   },
 }
 </script>
