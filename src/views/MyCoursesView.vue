@@ -4,16 +4,16 @@
       <Navbar />
     </div>
     <div
-      class="w-full h-[240px] bg-[url('imgs/banner2.png')] bg-center bg-no-repeat bg-cover lg:h-[440px] lg:bg-[url('imgs/banner.png')]">
+      class="w-full h-[240px] bg-[url('imgs/banner2.png')] bg-center bg-no-repeat bg-cover lg:h-[440px] lg:bg-[url('/imgs/banner.png')]">
     </div>
   </header>
 
   <main>
-    <div class="flex flex-row justify-between items-center w-full py-16 px-4 md:px-20">
+    <div class="justify-between items-center w-full py-16 px-4 md:px-20">
       <div>
         <Loader class="w-screen mx-auto" v-if="!loading" />
         <ul v-else
-          class="flex flex-wrap justify-center items-center gap-y-[15px] gap-x-[20px] min-[1366px]:gap-y-[40px] min-[1366px]:gap-x-[30px]">
+          class="w-full flex flex-row flex-wrap justify-center items-center gap-y-[15px] gap-x-[20px] min-[1366px]:gap-y-[40px] min-[1366px]:gap-x-[30px]">
           <li v-for="course in totalCourses" :key="course.id"
             class="relative w-full max-w-[355px] h-[222px] rounded-[10px] bg-center bg-no-repeat bg-cover flex flex-col justify-end p-[20px] gap-y-[15px] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:rounded-[10px] min-[1366px]:max-w-[344px] min-[1366px]:h-[320px]"
             :class="course.imagen ? 'before:bg-gradient-to-b from-[#00042500] to-[#000425]' : 'bg-[#000425]'"
@@ -56,7 +56,7 @@ export default {
   async mounted() {
     this.loading = false
     try {
-      this.totalCourses = JSON.parse(localStorage.getItem('cursosComprados'));
+      this.totalCourses = JSON.parse(localStorage.getItem('Miscursos'));
       this.loading = true
     } catch (error) {
       console.error(error);
