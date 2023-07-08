@@ -14,35 +14,38 @@
     </div>
 
     <ul class="w-full px-[20px] mt-[50px] mb-[30px] flex flex-col gap-y-[50px] min-[320px]:gap-y-[20px]">
-      <li v-for="course in courses" :key="course.id"
+      <li v-for="course in coursesResume" :key="course.id"
         class="grid grid-cols-[100%] gap-x-[20px] gap-y-[20px] min-[320px]:grid-cols-[133px_auto] min-[550px]:grid-cols-[133px_auto_auto]">
         <picture class="flex w-[100%] h-[100%] items-center">
-          <img :src="course.image" :alt="course.title" class="w-full rounded-[5px]">
+          <img :src="course.imagen" :alt="course.nombre" class="w-full rounded-[5px]">
         </picture>
 
         <div class="flex flex-col justify-between">
           <div class="flex flex-col mb-[12px]">
             <p class="text-[#222222] font-bold text-xs mb-[8px] min-[550px]:text-base Roboto">
-              {{ course.title }}
+              {{ course.nombre }}
             </p>
-            <span v-if="course.discount" class="text-[#5640FF] font-bold text-xs min-[550px]:text-sm Roboto">
-              Dto. {{ course.discount }}%
+            <span v-if="course.descuento" class="text-[#5640FF] font-bold text-xs min-[550px]:text-sm Roboto">
+              Dto. {{ course.descuento }}%
             </span>
-            <span v-if="course.gift" class="text-[#222222] text-xs min-[550px]:text-sm Roboto">
-              Regalo para: {{ course.gift }}
+            <span v-if="course.regalo" class="text-[#222222] text-xs min-[550px]:text-sm Roboto">
+              Regalo para: {{ course.regalo }}
+            </span>
+            <span class="text-[#5640FF] font-bold text-xs min-[550px]:text-sm Roboto">
+              {{ course.cantidad }}
             </span>
           </div>
 
           <div class="flex justify-end gap-[5px] flex-wrap">
             <span class="text-[#222222] font-bold text-xs min-[550px]:hidden Poppins">
-              {{ formatPrice(course.price) }}
+              {{ formatPrice(course.precio * course.cantidad) }}
             </span>
           </div>
         </div>
 
         <div class="hidden min-[550px]:flex min-[550px]:justify-end">
           <span class="text-[#222222] font-bold text-base Poppins">
-            {{ formatPrice(course.price) }}
+            {{ formatPrice(course.precio * course.cantidad) }}
           </span>
         </div>
       </li>
@@ -61,36 +64,21 @@
 </template>
 
 <script>
+import { useCartStore } from '@/stores/cart.store.js';
+
 export default {
   data() {
     return {
-      courses: [
-        {
-          id: 1,
-          image: '/imgs/shopping-course.png',
-          title: 'Gestión de Envases, Empaques y Embalajes',
-          discount: 25,
-          price: 269,
-          gift: null
-        },
-        {
-          id: 2,
-          image: '/imgs/shopping-course.png',
-          title: 'Gestión de Envases, Empaques y Embalajes',
-          discount: 10,
-          price: 269,
-          gift: null
-        },
-        {
-          id: 3,
-          image: '/imgs/shopping-course.png',
-          title: 'Gestión de Envases, Empaques y Embalajes',
-          discount: 40,
-          price: 269,
-          gift: 'panda@gmail.com'
-        }
-      ]
+      coursesResume: []
     };
+  },
+  async mounted() {
+    try {
+      await useCartStore().getProductsResume();
+      this.coursesResume = useCartStore().myCourses;
+    } catch (error) {
+      console.error(error);
+    }
   },
   methods: {
     formatPrice(price) {
@@ -101,14 +89,8 @@ export default {
     }
   },
   computed: {
-    totalPrice() {
-      return this.courses.reduce((total, course) => {
-        const discountedPrice = course.price * (1 - course.discount / 100);
-        return total + discountedPrice;
-      }, 0);
-    },
     totalPriceFormatted() {
-      return this.formatPrice(this.totalPrice);
+      return this.formatPrice(useCartStore().calcularSumaTotal('cursosComprados'));
     }
   }
 };
