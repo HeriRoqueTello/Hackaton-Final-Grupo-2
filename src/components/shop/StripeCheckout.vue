@@ -28,7 +28,7 @@ export default {
       coursesCart: [],
       loading: false,
       lineItems: [],
-      successURL: `${url}/resumen`,
+      successURL: `${url}/pago/aceptado`,
       cancelURL: `${url}/pago/cancelado`,
     };
   },
