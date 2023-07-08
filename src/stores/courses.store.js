@@ -35,12 +35,25 @@ export const useCoursesStore = defineStore({
           console.error(`Se produjo un error al traer los cursos: ${error}`);
         });
     },
+    async getFilterCourses(value) {
+      const endpoint = `/cursos?categoria=${value}`;
+      this.totalCourses = [];
+
+      await axios.get(`${this.apiURL}${endpoint}`)
+        .then(response => {
+          this.totalCourses = response.data;
+        })
+        .catch(error => {
+          console.error(`Se produjo un error al traer los cursos: ${error}`);
+        });
+    },
     async getDetalleCurso(id) {
       const endpoint = '/cursos';
 
       const { data } = await axios.get(`${this.apiURL}${endpoint}/${id}`)
 
       return data;
-    }
+    },
+    
   }
 });
