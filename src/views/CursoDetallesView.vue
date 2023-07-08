@@ -19,7 +19,7 @@
           <p class="text-lg text-left">{{ curso.descripcion }}</p>
           <div class="items-start justify-start flex mt-5">
             <button
-              class="inline-block botones rounded bg-indigo-600 mt-10 mr-8 px-9 py-3 text-sm font-bold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+              class="inline-block botones rounded bg-indigo-600 mt-10 mr-8 px-9 py-3 text-sm font-bold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" @click="cartStore.addProduct(id)"
             >
               Agregar al carrito
             </button>
@@ -39,12 +39,14 @@
 
 <script>
 import { useCoursesStore } from '@/stores/courses.store.js';
+import { useCartStore } from '@/stores/cart.store.js';
 import Navbar from '@/components/general/Navbar.vue'
 import Loader from '@/components/general/Loader.vue'
 
 export default {
   data() {
     return {
+      cartStore: useCartStore(),
       cursosStore: useCoursesStore(),
       curso: null,
       id: null,
@@ -67,7 +69,6 @@ export default {
     }
   },
   created(){
-    console.log(this.$route);
     this.id = this.$route.params.id
     this.getDetalles(this.id)
   },
@@ -78,7 +79,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 @keyframes fade-in {
