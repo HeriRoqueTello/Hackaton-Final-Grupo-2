@@ -4,7 +4,7 @@
       <Navbar />
     </div>
   </header>
-  <main class="relative">
+  <main class="relative animate-fade-in">
     <Loader v-if="!loading" />
     <div v-else class=" mx-auto">
       <section class="relative overflow-hidden">
@@ -19,7 +19,7 @@
           <p class="text-lg text-left">{{ curso.descripcion }}</p>
           <div class="items-start justify-start flex mt-5">
             <button
-              class="inline-block rounded bg-indigo-600 mt-10 mr-8 px-9 py-4 text-sm font-bold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+              class="inline-block botones rounded bg-indigo-600 mt-10 mr-8 px-9 py-3 text-sm font-bold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
             >
               Agregar al carrito
             </button>
@@ -81,6 +81,19 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -126,4 +139,29 @@ p {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+@media (max-width: 768px) {
+  .description {
+    left: 45%;
+    transform: translateX(-50%);
+    top: 12%;
+  }
+
+  .certificado-container {
+    position: static;
+    margin-top: -140px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .botones {
+    padding: 5px 45px;
+    width: 120%;
+  }
+
+
+}
+
+
+
 </style>
