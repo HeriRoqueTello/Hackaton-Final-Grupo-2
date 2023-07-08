@@ -2,7 +2,7 @@
   <div class="container-next py-12 px-10 shadow-xl mx-auto mt-12 lg:mt-0 lg:self-start">
     <div class="w-full flex flex-wrap justify-between items-center gap-4">
       <h2 class="text-[#5640FF] subtotal ">Subtotal</h2>
-      <label for="cupon" class="subtotal">{{ precioTotal }}</label>
+      <label for="cupon" class="subtotal">{{ loadData }}</label>
     </div>
     <div
       class="row w-full bg-[#F1F1F1] border-solid border-[1px] border-[#C4C4C4] rounded-[5px] flex justify-between items-center px-4 mt-6">
@@ -45,6 +45,12 @@ export default {
       });
     }
   },
+  computed: {
+    loadData() {
+      useCartStore().calcularSumaTotal()
+      return this.formatPrice(useCartStore().sumaTotalPrecio)
+    }
+  }
 }
 </script>
 <style>
