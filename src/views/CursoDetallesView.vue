@@ -4,32 +4,33 @@
       <Navbar />
     </div>
   </header>
-  <main class="relative animate-fade-in">
+  <main class="p-4 bg-gradient-to-b from-[#3015FD] to-[#7969f7] h-full lg:h-[calc(100vh-60px)]">
     <Loader v-if="!loading" />
     <div v-else class=" mx-auto">
-      <section class="relative overflow-hidden">
-        <div class="bg-image">
-          <img :src="curso.imagen" :alt="curso.nombre" class="w-full h-full object-cover opacity-75 ">
-          <div v-show="showCertificado" class="certificado-container w-2/5">
-            <img :src="curso.certificado" alt="Certificado" class="w-4/5 rounded-lg drop-shadow-xl">
-          </div>
-        </div>
-        <div class="description">
-          <h1 class="text-4xl font-bold mb-4 text-left">{{ curso.nombre }}</h1>
-          <p class="text-lg text-left">{{ curso.descripcion }}</p>
-          <div class="items-start justify-start flex mt-5">
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        
+        <div class="flex flex-col ">
+          <h1 class="text-3xl font-bold mb-4 text-center lg:text-left text-white">{{ curso.nombre }}</h1>
+          <p class="text-lg text-justify lg:text-left text-gray-200">{{ curso.descripcion }}</p>
+          <div class="flex flex-col lg:flex-row mt-5 gap-4">
             <button
-              class="inline-block botones rounded bg-indigo-600 mt-10 mr-8 px-9 py-3 text-sm font-bold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" 
+              class="inline-block rounded bg-indigo-800 mt-10 px-9 py-3 text-sm font-bold text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-900" 
               @click="addToCart()"
             >
               Agregar al carrito
             </button>
             <button
-              class="inline-block botones rounded bg-indigo-600 px-9 mt-10 font-bold py-3 text-sm text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500"
+              class="inline-block rounded bg-indigo-800 px-9 lg:mt-10 font-bold py-3 text-sm text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-900"
               @click="showCertificado = !showCertificado"
             >
               Ver Certificado
             </button>
+          </div>
+        </div>
+        <img v-if="!showCertificado" :src="curso.imagen" :alt="curso.nombre" class="w-full h-96 object-contain ">
+        <img v-if="showCertificado" :src="curso.certificado" alt="Certificado" class="w-full h-96 object-contain">
+        <div class="">
+          <div v-show="showCertificado" class="w-2/5">
           </div>
         </div>
       </section>
@@ -85,97 +86,4 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 1s ease;
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h1, h2 {
-  color: #000425;
-  font-family: 'Roboto', sans-serif;
-}
-
-p {
-  color: #333333;
-  font-family: 'Roboto', sans-serif;
-}
-
-.bg-image {
-  position: relative;
-  height: 93.7vh;
-  transition: transform 0.5s ease-in-out;
-}
-
-.description {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-60%, -50%);
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-}
-
-.opacity-75 {
-  opacity: 0.45;
-}
-
-.certificado-container {
-  position: absolute;
-  top: 50%;
-  right: -2%;
-  transform: translate(0, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.botones {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .botones {
-    width: auto;
-  }
-
-}
-
-@media (max-width: 767px) {
-  .description {
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: -50%;
-    font-size: 8px;
-  }
-
-  .certificado-container {
-    position: static;
-    width: 100%;
-    text-align: center;
-    margin-top: 30%;
-  }
-
-  .botones {
-    width: 100%;
-    margin-top: 1.5rem;
-  }
-}
-
-
 </style>
