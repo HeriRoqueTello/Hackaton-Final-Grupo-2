@@ -75,6 +75,7 @@ export default {
     return {
       menu: false,
       globalStore: useGlobalStore(),
+      products: []
     }
   },
   methods: {
@@ -84,7 +85,6 @@ export default {
   },
   computed: {
     numberCheckout(){
-      useCartStore().getProductsCart();
       return useCartStore().productos?.length ?? 0;
     }
   }
